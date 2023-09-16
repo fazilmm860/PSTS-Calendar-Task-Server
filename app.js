@@ -1,13 +1,23 @@
-const express=require("express");
-const app=express()
-const cors=require('cors')
-const dotenv=require('dotenv')
-const cookieParser=require("cookie-parser")
-const connection=require("./DB/conn");
-dotenv.config()
+require("dotenv").config();
+const express = require("express");
+const app = express();
+require("./db/conn");
+const loginRouter = require("./routes/router");
+const cors = require("cors");
+const cookiParser = require("cookie-parser")
+const port = process.env.PORT;
 
-const port=process.env.PORT
-connection();
+
+// app.get("/",(req,res)=>{
+//     res.status(201).json("server created")
+// });
+
+app.use(express.json());
+app.use(cookiParser());
+app.use(cors());
+app.use('/api',loginRouter);
+
+
 app.listen(port,()=>{
-    console.log(`Sever Started`);
-});
+    console.log(`server start at port no : ${port}`);
+})
