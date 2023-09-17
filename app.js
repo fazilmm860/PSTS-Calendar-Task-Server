@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 require("./db/conn");
 const loginRouter = require("./routes/router");
+const bookingRouter=require("./routes/bookingRouter")
 const cors = require("cors");
 const cookiParser = require("cookie-parser")
 const port = process.env.PORT;
@@ -19,7 +20,7 @@ app.use(cors({
     credentials: true
   }));
 app.use('/api',loginRouter);
-
+app.use('/api',bookingRouter);
 
 app.listen(port,()=>{
     console.log(`server start at port no : ${port}`);
