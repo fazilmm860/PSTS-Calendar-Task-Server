@@ -14,16 +14,6 @@ email: {
      type: String,
       required: true 
 },
-//   selectedSlot: {
-//      type: Date,
-//       required: true 
-// },
-// assignedRecruiter: {
-//       type: String,
-      
-// }
-// }, 
-// { timestamps: true }
 recruiter:{
       type:String,
       required:true,
