@@ -14,16 +14,34 @@ email: {
      type: String,
       required: true 
 },
-  selectedSlot: {
-     type: Date,
-      required: true 
+//   selectedSlot: {
+//      type: Date,
+//       required: true 
+// },
+// assignedRecruiter: {
+//       type: String,
+      
+// }
+// }, 
+// { timestamps: true }
+recruiter:{
+      type:String,
+      required:true,
 },
-  assignedRecruiter: {
-     type: String,
-      required: true 
+date:{
+      type:Date,
+      required:true
 },
-}, 
-{ timestamps: true }
+startTime:{
+      type:Number,
+      required:true
+},
+endTime:{
+      type:Number,
+      required:true
+}
+
+}
 );
 
 const Booking = mongoose.model('BookingSchema', bookingSchema);
