@@ -1,27 +1,10 @@
 const express = require('express');
 const moment = require('moment');
 const Booking=require('../models/bookingSchema')
-// const { postBooking, getBookings, getAvailableTimeSlots } = require('../contoller.js/controller');
+
 
 const router = express.Router();
 
-// // Route to create a booking
-// router.post('/book', postBooking);
-
-// // Route to retrieve bookings
-// router.get('/getbooking', getBookings);
-
-// // Route to get available time slots for a given day
-// router.get('/getAvailableTimeSlots/:date', async (req, res) => {
-//   try {
-//     const date = new Date(req.params.date);
-//     const availableSlots = await getAvailableTimeSlots(date);
-//     res.status(200).json({ availableSlots });
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: 'Internal Server Error' });
-//   }
-// });
 
 router.get('/available/:date', (req, res) => {
     const date = moment(req.params.date, 'YYYY-MM-DD');

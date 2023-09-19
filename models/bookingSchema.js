@@ -20,15 +20,16 @@ recruiter:{
 },
 date:{
       type:Date,
-      required:true
+      
+     
 },
 startTime:{
-      type:Number,
-      required:true
+      type:String,
+      
 },
 endTime:{
-      type:Number,
-      required:true
+      type:String,
+      
 }
 
 }
